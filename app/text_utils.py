@@ -21,7 +21,7 @@ MONTHS = (
     "|september|october|november|december"
 )
 DATE_RANGE_RE = re.compile(
-    rf"(\d{{4}})\s*(?:-|–|to)\s*(\d{{4}}|present|current)",
+    r"(\d{4})\s*(?:-|–|to)\s*(\d{4}|present|current)",
     re.IGNORECASE,
 )
 

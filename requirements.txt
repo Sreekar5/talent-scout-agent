@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pdfplumber
+scikit-learn
+textblob
+sentence-transformers
+pytest
+httpx
+ruff

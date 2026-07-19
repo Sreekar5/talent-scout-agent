@@ -1,0 +1,38 @@
+name: Talent Scout CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Download your code onto the CI machine
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Install Python 3.11
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Step 3: Install all dependencies
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Step 4: Ruff checks your code style/quality
+      - name: Lint with ruff
+        run: ruff check app/
+
+      # Step 5: Run automated tests
+      - name: Run tests
+        run: pytest tests/ -v
+
+      # Step 6: Build Docker image (confirms app containerizes cleanly)
+      - name: Build Docker image
+        run: docker build -t talent-scout-agent .

@@ -1,12 +1,15 @@
 """Text processing helpers used by both the JD parser and resume parser.
 All pure Python — no network calls, no model downloads.
 """
-import re
+"""Text processing helpers used by both the JD parser and resume parser.
+All pure Python — no network calls, no model downloads.
+"""
 import datetime
+import re
 
 from app.skills_taxonomy import ALL_SKILLS
 
-CURRENT_YEAR = datetime.date.today().year
+CURRENT_YEAR = datetime.datetime.now(tz=datetime.timezone.utc).year
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"\+?\d[\d\s().\-]{6,16}\d")
@@ -138,9 +141,8 @@ def guess_name(text: str, fallback: str = "") -> str:
         if "@" in line or any(ch.isdigit() for ch in line):
             continue
         words = line.split()
-        if 1 < len(words) <= 4 and len(line) <= 45:
-            if all(w[0].isupper() for w in words if w[0].isalpha()):
-                return line
+        if 1 < len(words) <= 4 and len(line) <= 45 and all(w[0].isupper() for w in words if w[0].isalpha()):
+            return line
     if fallback:
         stem = re.sub(r"\.[A-Za-z0-9]+$", "", fallback)
         return re.sub(r"[_\-]+", " ", stem).strip().title()

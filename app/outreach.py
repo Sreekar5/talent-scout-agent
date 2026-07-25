@@ -78,20 +78,16 @@ FOLLOWUP_TEMPLATES = [
 ]
 
 HIGH_INTEREST_FINAL = [
-    "Sounds perfect! I'm free Tuesday or Wednesday. "
-    "Really excited about this — please send a calendar invite!",
+    "Sounds perfect! I'm free Tuesday or Wednesday. Really excited about this — please send a calendar invite!",
 ]
 
 MEDIUM_INTEREST_FINAL = [
-    "Okay, send me the full job description first and "
-    "I'll let you know if I want to proceed.",
+    "Okay, send me the full job description first and I'll let you know if I want to proceed.",
 ]
 
 LOW_INTEREST_FINAL = [
-    "I appreciate the follow-up but I'm going to pass for now. "
-    "Thanks for thinking of me!",
+    "I appreciate the follow-up but I'm going to pass for now. Thanks for thinking of me!",
 ]
-
 
 def _get_top_skill(candidate: CandidateProfile, jd: JDProfile) -> str:
     jd_skills_lower = {s.lower() for s in jd.required_skills}

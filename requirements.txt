@@ -8,3 +8,4 @@ sentence-transformers
 pytest
 httpx
 ruff
+anthropic

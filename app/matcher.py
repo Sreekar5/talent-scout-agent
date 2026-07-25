@@ -99,8 +99,7 @@ def _build_reasoning(
         f"Overall Match Score: {final_score:.1f}/100",
         "",
         f"Semantic Fit (BERT): {semantic:.1f}/100",
-        "  → BERT read both the JD and resume and measured how "
-        "similar the overall content is.",
+        "  → BERT read both the JD and resume and measured how similar the overall content is.",
         "",
         f"Required Skills: {req_score:.1f}/100",
         f"  → Matched {len(matched_req)}/{len(jd.required_skills)} required skills.",
@@ -120,12 +119,10 @@ def _build_reasoning(
     lines += [
         "",
         f"Experience: {exp_score:.1f}/100",
-        f"  → Candidate has {candidate.years_experience} years "
-        f"(JD requires {jd.min_years_experience}+)",
+        f"  → Candidate has {candidate.years_experience} years (JD requires {jd.min_years_experience}+)",
         "",
         f"Education: {edu_score:.1f}/100",
-        f"  → Candidate: {candidate.education_label} "
-        f"| JD requires: {jd.min_education_label}",
+        f"  → Candidate: {candidate.education_label} | JD requires: {jd.min_education_label}",
     ]
     return "\n".join(lines)
 

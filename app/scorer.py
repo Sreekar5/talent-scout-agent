@@ -101,10 +101,7 @@ def compute_interest_score(
         f"Interest Score: {final_score:.1f}/100",
         "",
         f"Sentiment (TextBlob): {polarity:+.2f} → {sentiment_score:.1f}/100",
-        f"  → Overall tone of candidate replies is "
-        f"{'positive' if polarity > 0.1 else 'negative' if polarity < -0.1 else 'neutral'}",
-        "",
-        f"Positive Signals ({len(positive_found)} found): {positive_score:.1f}/100",
+        f"  → Overall tone of candidate replies is {'positive' if polarity > 0.1 else 'negative' if polarity < -0.1 else 'neutral'}",
     ]
     if positive_found:
         reasoning_lines.append(f"  ✅ {', '.join(positive_found)}")

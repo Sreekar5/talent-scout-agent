@@ -1,15 +1,14 @@
 """Text processing helpers used by both the JD parser and resume parser.
 All pure Python — no network calls, no model downloads.
 """
-"""Text processing helpers used by both the JD parser and resume parser.
-All pure Python — no network calls, no model downloads.
-"""
 import datetime
 import re
 
 from app.skills_taxonomy import ALL_SKILLS
 
 CURRENT_YEAR = datetime.datetime.now(tz=datetime.timezone.utc).year
+
+
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"\+?\d[\d\s().\-]{6,16}\d")

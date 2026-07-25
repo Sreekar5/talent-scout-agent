@@ -92,6 +92,6 @@ def guess_current_title(text: str) -> str | None:
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()][:10]
     for line in lines:
         if any(kw in line.lower() for kw in title_keywords):
-            if len(line) <= 60 and not "@" in line:
+            if len(line) <= 60 and "@" not in line:
                 return line
     return None

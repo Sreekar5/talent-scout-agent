@@ -4,7 +4,7 @@ Fully local — no API calls needed here.
 """
 from textblob import TextBlob
 
-from app.models import CandidateProfile, ConversationTurn, InterestResult
+from app.models import CandidateProfile, InterestResult
 
 # Keywords that signal genuine interest
 POSITIVE_SIGNALS = [

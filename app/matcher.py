@@ -99,8 +99,8 @@ def _build_reasoning(
         f"Overall Match Score: {final_score:.1f}/100",
         "",
         f"Semantic Fit (BERT): {semantic:.1f}/100",
-        f"  → BERT read both the JD and resume and measured how "
-        f"similar the overall content is.",
+        "  → BERT read both the JD and resume and measured how "
+        "similar the overall content is.",
         "",
         f"Required Skills: {req_score:.1f}/100",
         f"  → Matched {len(matched_req)}/{len(jd.required_skills)} required skills.",
